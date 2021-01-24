@@ -1,5 +1,6 @@
 const imageContainer = document.getElementById("image-container");
 const loader = document.getElementById("loader");
+const error = document.getElementById("error");
 
 let isInitialLoad = true;
 let imagesLoaded = 0;
@@ -22,6 +23,12 @@ function imageLoaded() {
     ready = true;
     loader.hidden = true;
   }
+}
+
+function showError() {
+  error.hidden = false;
+  loader.hidden = true;
+  imageContainer.hidden = true;
 }
 
 // Helper function to set attributes on DOM elements
@@ -66,7 +73,7 @@ async function getPhotos() {
       isInitialLoad = false;
     }
   } catch (error) {
-    // catch error here
+    showError();
   }
 }
 
