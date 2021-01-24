@@ -67,13 +67,14 @@ async function getPhotos() {
   try {
     const response = await fetch(apiUrl);
     photos = await response.json();
-    displayPhotos();
-    if (isInitialLoad) {
-      updateAPIURLWithNewCount(30);
-      isInitialLoad = false;
-    }
   } catch (error) {
     showError();
+  }
+
+  displayPhotos();
+  if (isInitialLoad) {
+    updateAPIURLWithNewCount(30);
+    isInitialLoad = false;
   }
 }
 
