@@ -26,7 +26,7 @@ function imageLoaded() {
 }
 
 function showError() {
-  error.hidden = false;
+  error.style.display = "flex";
   loader.hidden = true;
   imageContainer.hidden = true;
 }
