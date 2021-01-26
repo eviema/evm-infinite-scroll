@@ -9,6 +9,9 @@ let ready = false;
 let photos = [];
 
 // Unsplash API settings
+// * Performance tip:
+// ** Keep initial count SMALL to reduce response time on page load.
+// ** Then increase count on subsequent requests as needed.
 const initialCount = 5;
 const apiKey = "qzvzj-46WrrIo1wE8y1towYV0qUCp8yhtjyEYmsrJr0";
 let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${initialCount}`;
